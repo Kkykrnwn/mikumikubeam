@@ -35,7 +35,7 @@ Pastikan kamu sudah menginstal:
 1. Clone repositori ini:
 
    ```bash
-   git clone https://github.com/sammwyy/mikumikubeam.git
+   git clone https://github.com/kkykrnwn/mikumikubeam.git
    cd mikumikubeam
    ```
 
@@ -66,7 +66,7 @@ Pastikan kamu sudah menginstal:
 1. Clone repositori dan masuk ke direktori project:
 
    ```bash
-   git clone https://github.com/sammwyy/mikumikubeam.git
+   git clone https://github.com/kkykrnwn/mikumikubeam.git
    cd mikumikubeam
    ```
 
