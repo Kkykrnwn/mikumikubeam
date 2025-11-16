@@ -1,19 +1,19 @@
 # Miku Miku Beam 💥⚡ (Network Stresser)
 
-Server stress testing yang seru dan menarik dengan tampilan **bertema Miku**, di mana kamu bisa mengatur dan menjalankan attack sambil menikmati lagu keren di latar belakang! 🎤✨
+Server stress testing yang seru dan menarik dengan tampilan **bertema Miku**, di mana kamu bisa mengatur dan menjalankan serangan sambil menikmati lagu keren di latar belakang! 🎤✨
 
 ![Screenshot](docs/screenshot.png)
 
 ## Fitur 🎉
 
-* 🐳 **Siap Docker**: MMB siap dibangun dan dijalankan di dalam container Docker.
-* 🌐 **Visualisasi Attack Secara Real-time**: Lihat progres dan statistik attack secara langsung saat berjalan. 🔥
+* 🐳 **Siap Docker**: Miku Miku Beam siap dibangun dan dijalankan di dalam container Docker.
+* 🌐 **Visualisasi Serangan Secara Real-time**: Lihat progres dan statistik serangan secara langsung saat berjalan. 🔥
 * 🎶 **UI Bertema Miku**: Desain yang imut dan berwarna cerah dengan nuansa Miku, membuat prosesnya lebih menyenangkan. Termasuk lagu keren biar kamu makin semangat! 🎧
-* 🧑‍💻 **Parameter Attack yang Bisa Dikonfigurasi**: Atur metode attack, ukuran paket, durasi, dan jeda paket dengan mudah melalui antarmuka frontend.
-* 🛠️ **Penanganan Attack Berbasis Worker**: Server memproses attack di worker terpisah untuk performa dan skalabilitas yang optimal.
-* 📊 **Statistik Langsung**: Pantau keberhasilan dan kegagalan tiap attack secara real-time. Lihat berapa banyak paket yang dikirim dan apakah berhasil atau gagal.
+* 🧑‍💻 **Parameter Serangan yang Bisa Dikonfigurasi**: Atur metode serangan, ukuran paket, durasi, dan jeda paket dengan mudah melalui antarmuka frontend.
+* 🛠️ **Penanganan Serangan Berbasis Worker**: Server memproses serangan di worker terpisah untuk performa dan skalabilitas yang optimal.
+* 📊 **Statistik Langsung**: Pantau keberhasilan dan kegagalan tiap serangan secara real-time. Lihat berapa banyak paket yang dikirim dan apakah berhasil atau gagal.
 * 🖼️ **Desain Estetis**: Antarmuka yang imut dan enak dilihat agar pengalamanmu menyenangkan. 🌸
-* 📡 **Metode Attack:**
+* 📡 **Metode Serangan:**
 
   * `HTTP Flood` - Mengirim permintaan HTTP acak
   * `HTTP Bypass` - Mengirim permintaan HTTP yang meniru request nyata (redirect, cookies, headers, resources, dll)
@@ -23,7 +23,7 @@ Server stress testing yang seru dan menarik dengan tampilan **bertema Miku**, di
 
 ## Setup 🛠️
 
-### Prasyarat 📦
+### Persyaratan 📦
 
 Pastikan kamu sudah menginstal:
 
@@ -96,14 +96,14 @@ Pastikan kamu sudah menginstal:
 
 Setelah server aktif dan berjalan, kamu bisa mengaksesnya lewat frontend:
 
-1. **Mulai Attack**:
+1. **Mulai Serangan**:
 
-   * Atur parameter attack: target URL, metode attack (HTTP Flood, Slowloris, TCP, dll), ukuran paket, durasi, dan delay.
-   * Tekan tombol "Start Attack" untuk memulai stress test.
+   * Atur parameter serangan: target URL, metode serangan (HTTP Flood, Slowloris, TCP, dll), ukuran paket, durasi, dan delay.
+   * Tekan tombol "Mulai Serangan" untuk memulai stress test.
 
-2. **Hentikan Attack**:
+2. **Hentikan Serangan**:
 
-   * Tekan tombol "Stop Attack" untuk menghentikan attack yang sedang berjalan.
+   * Tekan tombol "Hentikan Serangan" untuk menghentikan Serangan yang sedang berjalan.
 
 ### Contoh Request
 
@@ -123,33 +123,33 @@ Akses ke file `data/proxies.txt` dan `data/uas.txt` kini bisa dilakukan langsung
 
 ![AnnotatedImage](docs/annotated-button.png)
 
-## Penanganan Attack Berbasis Worker 🔧💡
+## Penanganan Serangan Berbasis Worker 🔧💡
 
-Setiap jenis attack ditangani dalam worker thread terpisah, memastikan server utama tetap responsif. Worker attack dimuat secara dinamis sesuai metode yang dipilih (HTTP, dll).
+Setiap jenis serangan ditangani dalam worker thread terpisah, memastikan server utama tetap responsif. Serangan Worker dimuat secara dinamis sesuai metode yang dipilih (HTTP, dll).
 
 ## To-Do 📝
 
-* Tambahkan lebih banyak metode attack:
+* Tambahkan lebih banyak metode serangan:
 
   * UDP 🌐
   * DNS 📡
   * Dan lainnya! 🔥
 
-* Tingkatkan statistik dan laporan attack untuk pemantauan real-time yang lebih baik. 📊
+* Tingkatkan statistik dan laporan serangan untuk pemantauan real-time yang lebih baik. 📊
 
 ## Kontribusi 💖
 
-Silakan fork repo ini dan buat pull request untuk menambahkan protokol attack baru, memperbaiki bug, atau meningkatkan fitur. Kalau kamu punya ide fitur baru, jangan ragu untuk berbagi! 😄
+Silakan fork repo ini dan buat pull request untuk menambahkan protokol serangan baru, memperbaiki bug, atau meningkatkan fitur. Kalau kamu punya ide fitur baru, jangan ragu untuk berbagi! 😄
 
-### Menambahkan Metode Attack Baru ⚡
+### Menambahkan Metode Serangan Baru ⚡
 
-Untuk menambahkan metode attack baru (misalnya Minecraft, TCP, UDP, DNS), kamu bisa membuat file worker baru dan menambahkannya ke konfigurasi server.
+Untuk menambahkan metode serangan baru (misalnya Minecraft, TCP, UDP, DNS), kamu bisa membuat file worker baru dan menambahkannya ke konfigurasi server.
 
 Contohnya:
 
-* Tambahkan metode attack baru di pengaturan frontend.
+* Tambahkan metode serangan baru di pengaturan frontend.
 * Buat file worker yang sesuai (misalnya `minecraftAttack.js`).
-* Perbarui konfigurasi handler attack agar mencakup metode baru tersebut.
+* Perbarui konfigurasi handler serangan agar mencakup metode baru tersebut.
 
 ```javascript
 const attackHandlers = {
@@ -167,9 +167,9 @@ const attackHandlers = {
 
 ### FAQ ❓
 
-**1. Sistem operasi apa yang didukung MMB?**
+**1. Sistem operasi yang sudah didukung MikuMikuBeam**
 
-> **Windows**, **Linux**, **Mac**, dan **Android (belum diuji)**
+> **Windows**, **Linux**, **Mac**, dan **Android (pakai mode desktop)**
 
 **2. Crash saat startup dengan error "concurrently"**
 
@@ -185,7 +185,7 @@ const attackHandlers = {
 **4. Request gagal dikirim ke server target (Read timeout dan sejenisnya)**
 
 > Kamu harus menambahkan proxy yang sesuai di file `data/proxies.txt`.
-> Setiap baris berisi satu proxy yang digunakan untuk melakukan attack.
+> Setiap baris berisi satu proxy yang digunakan untuk melakukan serangan.
 > Formatnya harus seperti ini:
 >
 > * `protocol://user:password@host:port` (Proxy dengan autentikasi)
@@ -207,4 +207,4 @@ Perlu diketahui bahwa project ini hanya untuk tujuan edukasi dan **tidak boleh d
 
 ---
 
-### (｡♥‿♥｡) Selamat Menjalankan Hacking 💖🎶
+### (｡♥‿♥｡) Selamat Menjadi Hacker 💖🎶
